@@ -1,11 +1,14 @@
 "Coupe_d'afrique" (application mobile Tourisme_Sportif)
 -------------------------------------------------------
+https://github.com/IkramBelhaj01/cuppfa.git
 
 Projet en cours de réalisation par :
 ---------------------------------------
 -Doukar Aya
 -Belhaj Ikram
 -Abdellah Qatre En Nada
+
+
 Fonctionnalités proposé:
 -----------------------------------------------------------
 - 	En tant qu'utilisateur, je veux pouvoir consulter un calendrier des événements du coup d’afrique prévus au Maroc en 2025, afin de planifier mes activités lors de mon séjour.
