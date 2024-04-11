@@ -7,11 +7,11 @@ function WelcomeScreen({ navigation }) {
       <Text style={styles.welcomeText}>Welcome to Cupculture</Text>
       <Image
         style={styles.image}
-        source={require('C:/Users/HP/Desktop/cuppfa/frontend/frontend/logo1-removebg-preview.png')} 
+        source={require('C:/Users/admin/Desktop/cuppfa/frontend/frontend/assets/logo1-removebg-preview.png')}  
       />
       <Text style={styles.subText}>Explore Sports and culture for your African Cup adventure</Text>
       
-      <TouchableOpacity  onPress={() => navigation.navigate('InterfaceConnexion')} style={styles.button}>
+      <TouchableOpacity onPress={() => navigation.navigate('InterfaceConnexion')} style={styles.button}>
         <Text style={styles.buttonText}>Get Started</Text>
       </TouchableOpacity>
     </View>
@@ -43,11 +43,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
     padding: 10,
     borderRadius: 5,
-    marginTop: 80,
+    marginTop: 20, // Modifier la marge selon votre mise en page
   },
   buttonText: {
     color: 'white',
-    textAlign: 'center',
     fontSize: 16,
     fontWeight: 'bold',
   },
