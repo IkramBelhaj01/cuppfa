@@ -8,54 +8,47 @@ const MarrakeshTransport = () => {
   // Liste des transports disponibles à Fès
   const transportData = [
     {
-      name: "Bus à Fès",
-      description: "La Société de Transports de Fès (STF) est l'opérateur principal du réseau de transport en commun de la ville. Elle exploite un vaste réseau de lignes de bus desservant Fès et ses environs. Les bus STF sont souvent utilisés pour les déplacements intra-urbains et interurbains. Les horaires de bus sont généralement disponibles aux arrêts de bus et sur le site Web de la STF.",
-      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/fesTransport/bus.avif'),
-     
+      name: "Bus à Marrakech",
+      description: "Le réseau de bus de Marrakech est géré par la Société de Transports de Marrakech (STM). Il offre une multitude de lignes desservant la ville et ses environs. Les bus STM sont largement utilisés pour les déplacements intra-urbains et interurbains. Les horaires de bus sont généralement disponibles aux arrêts de bus et sur le site Web de la STM.",
+      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/marrakechTransport/bus.jpg'),
       services: [
         "Lignes de bus intra-urbaines",
         "Lignes de bus interurbaines",
         "Services de nuit (Noctambus)"
       ],
       tarifs: {
-        ticket: "6 MAD",
-        abonnement_mensuel: "150 MAD",
-        abonnement_annuel: "1500 MAD"
+        ticket: "7 MAD",
+        abonnement_mensuel: "180 MAD",
+        abonnement_annuel: "1800 MAD"
       },
       stations_principales: [
-        "Gare de Fès",
-        "Place R'cif",
-        "Bab Boujloud",
-        "Borj Fez Mall"
+        "Gare de Marrakech",
+        "Place Jemaa el-Fna",
+        "Guéliz",
+        "Bab Doukkala"
       ]
     },
     {
-      name: "Taxis à Fès",
-      description: "Les taxis sont omniprésents à Fès et constituent un moyen de transport pratique pour se déplacer en ville. Ils peuvent être trouvés dans les stations de taxi désignées ainsi que dans les rues principales. Les taxis à Fès sont généralement de couleur bleue et fonctionnent selon un système de tarification standard basé sur le compteur. Il est également possible de négocier les tarifs pour les trajets plus longs ou les courses particulières.",
-      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/fesTransport/taxi.jpg'),
+      name: "Les taxis",
+      description: "Les taxis sont facilement accessibles à Marrakech et constituent un moyen pratique de se déplacer en ville. Ils sont généralement de couleur rouge et disposent d'un compteur pour la tarification standard. Les taxis peuvent être trouvés dans les stations de taxi désignées ainsi que dans les rues principales.",
+      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/marrakechTransport/taxi.webp'),
       services: [
         "Taxis conventionnels",
         "Taxis collectifs"
       ],
-      tarification: "Tarif de démarrage : 2.50 MAD + 1.60 MAD/km",
+      tarification: "Tarif de démarrage : 3 MAD + 2 MAD/km",
       contacts_utiles: {
         numéro_central: "0555-555-555",
-        associations_taxi: [
-          {
-            nom: "Association des taxis de Fès",
-            numéro: "0801-234-567"
-          },
-          {
-            nom: "Association des taxis collectifs",
-            numéro: "0801-765-432"
-          }
-        ]
+        association_taxi: {
+          nom: "Association des taxis de Marrakech",
+          numéro: "0801-234-567"
+        }
       }
     },
     {
       name: "Train entre les villes",
-      description: "Les trains sont un moyen populaire et pratique de voyager entre les villes marocaines. Ils offrent un service confortable et fiable avec des horaires réguliers. Les principaux itinéraires de train incluent Fès à Rabat, Fès à Casablanca et Fès à Marrakech.",
-      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/fesTransport/train.jpg'),
+      description: "Les trains offrent un moyen confortable et fiable de voyager entre les villes marocaines. Marrakech est un point de départ important pour le réseau ferroviaire, offrant des liaisons vers plusieurs destinations, y compris Casablanca, Rabat et Fès.",
+      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/marrakechTransport/train.jpg'),
       website: "https://www.oncf.ma/",
       services: [
         "Train express",
@@ -66,31 +59,31 @@ const MarrakeshTransport = () => {
         deuxième_classe: "Varie selon l'itinéraire"
       },
       stations_principales: [
-        "Gare de Fès",
-        "Gare de Rabat",
+        "Gare de Marrakech",
         "Gare de Casablanca",
-        "Gare de Marrakech"
+        "Gare de Rabat",
+        "Gare de Fès"
       ]
     },
     {
-        name: "Bus entre les villes",
-        description: "Les bus interurbains sont un moyen abordable et pratique de voyager entre les villes du Maroc. Ils offrent un large éventail de destinations avec des horaires réguliers. Les principaux opérateurs de bus incluent CTM et Supratours.",
-        image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/fesTransport/ctm.jpg'),
-        website: "https://www.ctm.ma/",
-        services: [
-          "Bus express",
-          "Bus régional"
-        ],
-        tarifs: {
-            Pour:"Les tarifs varient selon l'itinéraire et la classe."},
-        stations_principales: [
-          "Gare routière de Fès",
-          "Gare routière de Rabat",
-          "Gare routière de Casablanca",
-          "Gare routière de Marrakech"
-        ]
-      }
-      
+      name: "Bus entre les villes",
+      description: "Les bus interurbains sont une option économique pour voyager entre les villes du Maroc. Les principaux opérateurs de bus comme CTM et Supratours offrent un large choix de destinations depuis Marrakech.",
+      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/marrakechTransport/suprator.jpg'),
+      website: "https://www.ctm.ma/",
+      services: [
+        "Bus express",
+        "Bus régional"
+      ],
+      tarifs: {
+        Pour: "Les tarifs varient selon l'itinéraire et la classe."
+      },
+      stations_principales: [
+        "Gare routière de Marrakech",
+        "Gare routière de Casablanca",
+        "Gare routière de Rabat",
+        "Gare routière de Fès"
+      ]
+    }
   ];
 
   // Fonction de filtrage des transports en fonction de la recherche

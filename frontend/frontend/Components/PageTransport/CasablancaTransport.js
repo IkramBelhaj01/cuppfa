@@ -9,7 +9,7 @@ const CasablancaTransport = () => {
     {
       name: "Bus à Casablanca",
       description: "Le réseau de bus à Casablanca est géré par la Société de Transports de Casablanca (STC). Il couvre un large éventail de lignes desservant la ville et ses environs. Les bus sont couramment utilisés pour les déplacements intra-urbains et interurbains.",
-      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/fesTransport/taxi.jpg'),
+      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/casablancaTransport/bus.webp'),
       services: [
         "Lignes de bus intra-urbaines",
         "Lignes de bus interurbaines",
@@ -47,7 +47,7 @@ const CasablancaTransport = () => {
     {
       name: "Train entre les villes",
       description: "Les trains offrent un moyen confortable et fiable de voyager entre les villes marocaines. Casablanca est une plaque tournante importante pour le réseau ferroviaire national, offrant des liaisons vers plusieurs destinations, y compris Fès, Rabat et Marrakech.",
-      image: require("D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/fesTransport/taxi.jpg"),
+      image: require("D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/casablancaTransport/casaVoya.jpg"),
       website: "https://www.oncf.ma/",
       services: [
         "Train express",
@@ -66,7 +66,7 @@ const CasablancaTransport = () => {
     {
       name: "Bus entre les villes",
       description: "Les bus interurbains sont une option économique pour voyager entre les villes du Maroc. Les principaux opérateurs de bus comme CTM et Supratours offrent un large choix de destinations depuis Casablanca.",
-      image: require("D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/fesTransport/taxi.jpg"),
+      image: require("D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/casablancaTransport/gareR.jpg"),
       website: "https://www.ctm.ma/",
       services: [
         "Bus express",
@@ -83,7 +83,7 @@ const CasablancaTransport = () => {
     {
       name: "Location de voiture",
       description: "La location de voiture est une option pratique pour explorer Casablanca et ses environs à votre rythme. Plusieurs agences de location de voitures sont disponibles à Casablanca, offrant une gamme de véhicules pour répondre à vos besoins.",
-      image: require("D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/fesTransport/taxi.jpg"),
+      image: require("D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/casablancaTransport/location.jpg"),
       services: [
         "Large choix de véhicules",
         "Options de location à court et long terme",

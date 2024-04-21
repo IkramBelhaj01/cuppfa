@@ -8,10 +8,9 @@ const TangerTransport = () => {
   // Liste des transports disponibles à Fès
   const transportData = [
     {
-      name: "Bus à Fès",
-      description: "La Société de Transports de Fès (STF) est l'opérateur principal du réseau de transport en commun de la ville. Elle exploite un vaste réseau de lignes de bus desservant Fès et ses environs. Les bus STF sont souvent utilisés pour les déplacements intra-urbains et interurbains. Les horaires de bus sont généralement disponibles aux arrêts de bus et sur le site Web de la STF.",
-      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/fesTransport/bus.avif'),
-     
+      name: "Bus à Tanger",
+      description: "Le réseau de bus de Tanger est géré par la Société de Transports de Tanger (STT). Il propose un large éventail de lignes de bus desservant la ville et ses environs. Les bus de la STT sont largement utilisés pour les déplacements intra-urbains et interurbains. Les horaires de bus sont généralement disponibles aux arrêts de bus et sur le site Web de la STT.",
+      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/tangerTransport/bus.jpeg'),
       services: [
         "Lignes de bus intra-urbaines",
         "Lignes de bus interurbaines",
@@ -23,16 +22,16 @@ const TangerTransport = () => {
         abonnement_annuel: "1500 MAD"
       },
       stations_principales: [
-        "Gare de Fès",
-        "Place R'cif",
-        "Bab Boujloud",
-        "Borj Fez Mall"
+        "Gare de Tanger-Ville",
+        "Place du Grand Socco",
+        "Boulevard Pasteur",
+        "Tanger City Mall"
       ]
     },
     {
-      name: "Taxis à Fès",
-      description: "Les taxis sont omniprésents à Fès et constituent un moyen de transport pratique pour se déplacer en ville. Ils peuvent être trouvés dans les stations de taxi désignées ainsi que dans les rues principales. Les taxis à Fès sont généralement de couleur bleue et fonctionnent selon un système de tarification standard basé sur le compteur. Il est également possible de négocier les tarifs pour les trajets plus longs ou les courses particulières.",
-      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/fesTransport/taxi.jpg'),
+      name: "Taxis à Tanger",
+      description: "Les taxis sont largement disponibles à Tanger et constituent un moyen pratique de se déplacer en ville. Ils sont généralement de couleur jaune et disposent d'un compteur pour la tarification standard. On peut trouver des taxis dans les stations de taxi désignées ainsi que dans les rues principales.",
+      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/tangerTransport/taxi.avif'),
       services: [
         "Taxis conventionnels",
         "Taxis collectifs"
@@ -40,22 +39,16 @@ const TangerTransport = () => {
       tarification: "Tarif de démarrage : 2.50 MAD + 1.60 MAD/km",
       contacts_utiles: {
         numéro_central: "0555-555-555",
-        associations_taxi: [
-          {
-            nom: "Association des taxis de Fès",
-            numéro: "0801-234-567"
-          },
-          {
-            nom: "Association des taxis collectifs",
-            numéro: "0801-765-432"
-          }
-        ]
+        association_taxi: {
+          nom: "Association des taxis de Tanger",
+          numéro: "0801-234-567"
+        }
       }
     },
     {
       name: "Train entre les villes",
-      description: "Les trains sont un moyen populaire et pratique de voyager entre les villes marocaines. Ils offrent un service confortable et fiable avec des horaires réguliers. Les principaux itinéraires de train incluent Fès à Rabat, Fès à Casablanca et Fès à Marrakech.",
-      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/fesTransport/train.jpg'),
+      description: "Les trains offrent un moyen confortable et fiable de voyager entre les villes marocaines. Tanger est une plaque tournante importante pour le réseau ferroviaire national, offrant des liaisons vers plusieurs destinations, y compris Rabat, Casablanca et Marrakech. En particulier, le TGV relie Tanger à Casablanca et à d'autres grandes villes marocaines à grande vitesse, offrant un moyen rapide et efficace de se déplacer à travers le pays.",
+      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/tangerTransport/train.jpg'),
       website: "https://www.oncf.ma/",
       services: [
         "Train express",
@@ -66,32 +59,33 @@ const TangerTransport = () => {
         deuxième_classe: "Varie selon l'itinéraire"
       },
       stations_principales: [
-        "Gare de Fès",
+        "Gare de Tanger-Ville",
         "Gare de Rabat",
         "Gare de Casablanca",
         "Gare de Marrakech"
       ]
     },
     {
-        name: "Bus entre les villes",
-        description: "Les bus interurbains sont un moyen abordable et pratique de voyager entre les villes du Maroc. Ils offrent un large éventail de destinations avec des horaires réguliers. Les principaux opérateurs de bus incluent CTM et Supratours.",
-        image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/fesTransport/ctm.jpg'),
-        website: "https://www.ctm.ma/",
-        services: [
-          "Bus express",
-          "Bus régional"
-        ],
-        tarifs: {
-            Pour:"Les tarifs varient selon l'itinéraire et la classe."},
-        stations_principales: [
-          "Gare routière de Fès",
-          "Gare routière de Rabat",
-          "Gare routière de Casablanca",
-          "Gare routière de Marrakech"
-        ]
-      }
-      
+      name: "Bus entre les villes",
+      description: "Les bus interurbains sont une option économique pour voyager entre les villes du Maroc. Les principaux opérateurs de bus comme CTM et Supratours offrent un large choix de destinations depuis Tanger.",
+      image: require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/tangerTransport/ctm.jpg'),
+      website: "https://www.ctm.ma/",
+      services: [
+        "Bus express",
+        "Bus régional"
+      ],
+      tarifs: {
+        Pour: "Les tarifs varient selon l'itinéraire et la classe."
+      },
+      stations_principales: [
+        "Gare routière de Tanger",
+        "Gare routière de Rabat",
+        "Gare routière de Casablanca",
+        "Gare routière de Marrakech"
+      ]
+    }
   ];
+  
 
   // Fonction de filtrage des transports en fonction de la recherche
   const filteredTransportData = transportData.filter(transport =>
