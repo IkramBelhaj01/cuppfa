@@ -5,14 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import InterfaceConnexion from './Components/ConnexionPage/InterfaceConnexion';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AccueilPage from './Components/AcceuilPage/AcceuilPage'; // Importez la page d'accueil
-//Recommendations
-import PageRecommandations from './Components/PageRecommandations/PageRecommandations'; 
-import FesRecommendations from './Components/PageRecommandations/FesRecommendations'; 
-import MarrakechRecommendations from './Components/PageRecommandations/MarrakechRecommendations'; 
-import AgadirRecommendations from './Components/PageRecommandations/AgadirRecommendations'; 
-import CasablancaRecommendations from './Components/PageRecommandations/CasablancaRecommendations'; 
-import RabatRecommendations from './Components/PageRecommandations/RabatRecommendations'; 
-import TangerRecommendations from './Components/PageRecommandations/TangerRecommendations'; 
+
 //transport
 import PageTransport from './Components/PageTransport/PageTransport';
 import FesTransport from './Components/PageTransport/FesTransport';
@@ -51,83 +44,7 @@ export default function App() {
         }}
   
         />
-        <Stack.Screen
-          name="PageRecommandations"
-          component={PageRecommandations}
-          options={{
-            title: 'Recommandations',
-            headerTintColor: 'white',
-            headerStyle: {
-              backgroundColor: 'black',
-            },
-          }}
-        />
-        <Stack.Screen
-          name="FesRecommendations"
-          component={FesRecommendations}
-          options={{
-            title: ' Fès',
-            headerTintColor: 'white',
-            headerStyle: {
-              backgroundColor: 'black',
-            },
-          }}
-        />
-        <Stack.Screen
-          name="MarrakechRecommendations"
-          component={MarrakechRecommendations}
-          options={{
-            title: ' Marrakech',
-            headerTintColor: 'white',
-            headerStyle: {
-              backgroundColor: 'black',
-            },
-          }}
-        />
-        <Stack.Screen
-          name="AgadirRecommendations"
-          component={AgadirRecommendations}
-          options={{
-            title: ' Agadir',
-            headerTintColor: 'white',
-            headerStyle: {
-              backgroundColor: 'black',
-            },
-          }}
-        />
-        <Stack.Screen
-          name="CasablancaRecommendations"
-          component={CasablancaRecommendations}
-          options={{
-            title: ' Casablanca',
-            headerTintColor: 'white',
-            headerStyle: {
-              backgroundColor: 'black',
-            },
-          }}
-        />
-        <Stack.Screen
-          name="RabatRecommendations"
-          component={RabatRecommendations}
-          options={{
-            title: ' Rabat',
-            headerTintColor: 'white',
-            headerStyle: {
-              backgroundColor: 'black',
-            },
-          }}
-        />
-        <Stack.Screen
-          name="TangerRecommendations"
-          component={TangerRecommendations}
-          options={{
-            title: ' Tanger',
-            headerTintColor: 'white',
-            headerStyle: {
-              backgroundColor: 'black',
-            },
-          }}
-        />
+        
         <Stack.Screen
           name="PageTransport"
           component={PageTransport}
