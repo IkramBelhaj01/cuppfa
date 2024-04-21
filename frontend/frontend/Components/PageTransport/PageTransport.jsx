@@ -2,11 +2,11 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ImageBackground, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-const backgroundImage = require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/back11.jpg');
+const backgroundImage = require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Transport/back.jpg')
 const mapImage = require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/carteMar.png');
 
 const PageRecommandations = ({ navigation }) => {
-  // Coordonnées des noms des villes sur la photo 
+  // Coordonnées des noms des villes sur la photo (à remplacer par les coordonnées réelles)
   const coordinates = {
     Fes: { x: 310, y: 70 },
     Marrakech: { x: 225, y: 145 },
@@ -18,7 +18,7 @@ const PageRecommandations = ({ navigation }) => {
 
   const handleCityClick = (city) => {
     // Redirection vers la page de recommandations de la ville cliquée
-    navigation.navigate(`${city}Recommendations`);
+    navigation.navigate(`${city}Transport`);
   };
 
   return (
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: 'white',
+    color: 'black',
     marginBottom: 20,
     padding:8,
   },
@@ -72,8 +72,8 @@ const styles = StyleSheet.create({
     
   },
   mapContainer: {
-    width: 450, 
-    height: 400, 
+    width: 450, // Ajustez la largeur de la carte selon vos besoins
+    height: 400, // Ajustez la hauteur de la carte selon vos besoins
     display: "flex",
     justifyContent: 'center',
     alignItems: 'flex-start',
@@ -91,16 +91,16 @@ const styles = StyleSheet.create({
   },
   cityBackground: {
     backgroundColor: 'green', 
-    padding: 5, 
-    borderRadius: 5, 
+    padding: 5, // Ajustez selon vos besoins
+    borderRadius: 5, // Ajustez selon vos besoins
   },
   cityName: {
-    color: 'white',
+    color: 'black',
     fontSize: 16,
     fontWeight: 'bold',
-    
+    // Positionnez le nom de la ville pour qu'il soit centré sur la zone cliquable
     position: 'absolute',
-    top: -20, 
+    top: -20, // Ajustez ce nombre pour positionner le nom de la ville correctement
   },
 });
 

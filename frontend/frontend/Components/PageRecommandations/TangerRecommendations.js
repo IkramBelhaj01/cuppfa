@@ -7,49 +7,49 @@ const TangerRecommendations = () => {
       <View style={styles.container}>
         
         <RecommendationItem
-          name=" La Maison Bleue"
-          address="2 Place de L'Istiqlal, Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/MaisonB.jpg')}
+          name=" L'Olivier"
+          address="Al Houara Resort, Tanger"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Tanger/LOLIVIER.jpeg')}
         />
         <RecommendationItem
-          name=" Nuit de Fès "
-          address="4 derb Hammam Guerniz , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/RiadNuitFes.jpg')}
+          name=" El Morocco Club "
+          address="Place du Tabor , Tanger"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Tanger/el-morocco-club.jpg')}
         />
         <RecommendationItem
-          name=" Palais Faraj "
-          address="Arsat El Hammoumi , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/PalaisFaraj.jpg')}
+          name=" Les Huitres "
+          address="23 Av. Sidi Boukhari , Tanger"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Tanger/huites.jpg')}
         />
         <RecommendationItem
-          name=" Palais Bab Sahra "
-          address="1 Rue taryana , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/babsahra.jpg')}
+          name=" O Saveur "
+          address=" Rte California, Tanger"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Tanger/oSaveur.jpg')}
         />
         <RecommendationItem
-          name=" Les jardins de sheherazade "
-          address="1 Rue taryana , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/palaisShehera.jpg')}
+          name=" L'Ocean  "
+          address="Plage Sidi Kacem , Tanger"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Tanger/ocean.jpg')}
         />
         <RecommendationItem
-          name=" Dar roumana "
-          address="30 Derb El Amer , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/Roumana.jpg')}
+          name=" Dar Harruch "
+          address="35 Rue Hadj Mohamed Torres , Tanger"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Tanger/Dar-Harruch.jpg')}
         />
         <RecommendationItem
-          name=" Mouda palace "
-          address=" 7 Derb Agoual , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/mouda.jpg')}
+          name=" Anzar "
+          address=" Marina Bay , Tanger"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Tanger/anzar.jpg')}
         />
         <RecommendationItem
-          name=" Palais Amani  "
-          address=" 12 Derb El Miter , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/Amani.jpg')}
+          name=" La Brasserie de Paris  "
+          address=" Av. du Front de Mer , Tanger"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Tanger/brasserieParis.jpg')}
         />
         <RecommendationItem
-          name=" Riad Salam "
-          address=" 18 Derb Bennis Douh , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/riadsalam.jpg')}
+          name=" Le Mirage "
+          address=" Rte des Grottes , Tanger"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Tanger/mirage.jpg')}
         />
         
       </View>

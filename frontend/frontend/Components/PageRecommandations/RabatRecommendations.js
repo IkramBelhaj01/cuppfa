@@ -7,49 +7,49 @@ const RabatRecommendations = () => {
       <View style={styles.container}>
         
         <RecommendationItem
-          name=" La Maison Bleue"
-          address="2 Place de L'Istiqlal, Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/MaisonB.jpg')}
+          name=" Golden Fish"
+          address="Avenue Imam Malik, Rabat"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Rabat/goldenFish.jpg')}
         />
         <RecommendationItem
-          name=" Nuit de Fès "
-          address="4 derb Hammam Guerniz , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/RiadNuitFes.jpg')}
+          name="Le  Grill Robuchon "
+          address="Center Agdal , Rabat"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Rabat/GrillRobuchon.jpg')}
         />
         <RecommendationItem
-          name=" Palais Faraj "
-          address="Arsat El Hammoumi , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/PalaisFaraj.jpg')}
+          name=" L'Epicurien "
+          address="26 Av. Chellah , Rabat"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Rabat/epicurien.jpg')}
         />
         <RecommendationItem
-          name=" Palais Bab Sahra "
-          address="1 Rue taryana , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/babsahra.jpg')}
+          name=" Al Warda "
+          address="Av. Doustour, Rabat"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Rabat/al-warda.jpg')}
         />
         <RecommendationItem
-          name=" Les jardins de sheherazade "
-          address="1 Rue taryana , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/palaisShehera.jpg')}
+          name=" Cosmopolitan "
+          address="Av. Ibn Toumart , Rabat"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Rabat/cosmopolitan.jpg')}
         />
         <RecommendationItem
-          name=" Dar roumana "
-          address="30 Derb El Amer , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/Roumana.jpg')}
+          name=" Dinarjat "
+          address="6 Rue Belgnaoui , Rabat"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Rabat/dinarjat.jpg')}
         />
         <RecommendationItem
-          name=" Mouda palace "
-          address=" 7 Derb Agoual , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/mouda.jpg')}
+          name=" Villa Mandarine  "
+          address="19 Rue Oulad Bou'sbaa , Rabat"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Rabat/mandarine.jpg')}
         />
         <RecommendationItem
-          name=" Palais Amani  "
-          address=" 12 Derb El Miter , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/Amani.jpg')}
+          name=" Le Petit Beur  "
+          address=" Rue damas , Rabat"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Rabat/petitBeur.jpg')}
         />
         <RecommendationItem
-          name=" Riad Salam "
-          address=" 18 Derb Bennis Douh , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/riadsalam.jpg')}
+          name=" Dar El Medina"
+          address=" 3 rue benjelloul  , Rabat"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Rabat/darMedina.jpg')}
         />
         
       </View>

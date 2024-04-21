@@ -8,44 +8,44 @@ const MarrakechRecommendations = () => {
         
         
         <RecommendationItem
-          name=" Nuit de Fès "
-          address="4 derb Hammam Guerniz , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/RiadNuitFes.jpg')}
+          name=" Poka "
+          address="Rue Khalid Ben El Oualid، Marrakech"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Marrakech/Poka.jpeg')}
         />
         <RecommendationItem
-          name=" Palais Faraj "
-          address="Arsat El Hammoumi , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/PalaisFaraj.jpg')}
+          name=" LAO "
+          address="Rue Oued El Makhazine , Marrakech"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Marrakech/LaOjpg.jpg')}
         />
         <RecommendationItem
-          name=" Palais Bab Sahra "
-          address="1 Rue taryana , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/babsahra.jpg')}
+          name=" Casa Lalla "
+          address="16 Derb Jamaa , Marrakech"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Marrakech/casa-lalla.jpg')}
         />
         <RecommendationItem
-          name=" Les jardins de sheherazade "
-          address="1 Rue taryana , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/palaisShehera.jpg')}
+          name=" La Terrasse de La Brillante "
+          address="6 Rue de la Bahia , Marrakech"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Marrakech/Brillante.jpg')}
         />
         <RecommendationItem
-          name=" Dar roumana "
-          address="30 Derb El Amer , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/Roumana.jpg')}
+          name=" L'Ô A LA BOUCHE "
+          address="4 Rue Badr , Marrakech"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Marrakech/OLAlaBouche.jpg')}
         />
         <RecommendationItem
-          name=" Mouda palace "
-          address=" 7 Derb Agoual , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/mouda.jpg')}
+          name=" La Table Du Riad "
+          address="72 Arset Aouzal Rd , Marrakech"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Marrakech/TableRiad.jpg')}
         />
         <RecommendationItem
-          name=" Palais Amani  "
-          address=" 12 Derb El Miter , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/Amani.jpg')}
+          name=" NARWAMA   "
+          address=" Rue Koutoubia , Marrakech"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Marrakech/Narwama.jpg')}
         />
         <RecommendationItem
-          name=" Riad Salam "
-          address=" 18 Derb Bennis Douh , Fès"
-          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/fes/riadsalam.jpg')}
+          name=" La Palette  "
+          address=" 24 Rue Moulay Ali , Marrakech"
+          image={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/Marrakech/la-palette-restaurant.jpg')}
         />
         
       </View>
