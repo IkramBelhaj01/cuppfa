@@ -1,17 +1,23 @@
 import React from 'react';
-import { Text, View, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet, ImageBackground, Image } from 'react-native';
+import { Video } from 'expo-av';
+
+// Import de la vidéo
+import VideoSource from 'C:/Users/HP/Desktop/cuppfa/frontend/frontend/assets/videos/Morocco.mp4';
 
 function WelcomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.welcomeText}>Welcome to Cupculture</Text>
-      <Image
-        style={styles.image}
-        source={require('C:/Users/HP/Desktop/cuppfa/frontend/frontend/logo1-removebg-preview.png')} 
+      <Video
+        source={VideoSource} 
+        style={styles.backgroundVideo}
+        resizeMode="cover"
+        shouldPlay
       />
-      <Text style={styles.subText}>Explore Sports and culture for your African Cup adventure</Text>
-      
-      <TouchableOpacity  onPress={() => navigation.navigate('InterfaceConnexion')} style={styles.button}>
+     
+     
+      <Text style={styles.subText}></Text>
+      <TouchableOpacity onPress={() => navigation.navigate('InterfaceConnexion')} style={styles.button}>
         <Text style={styles.buttonText}>Get Started</Text>
       </TouchableOpacity>
     </View>
@@ -21,35 +27,43 @@ function WelcomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'space-between', // Aligne les éléments verticalement en les espaçant
+    alignItems: 'flex-end', // Aligne les éléments à droite
+    paddingHorizontal: 20,
+    paddingBottom: 20, // Ajoute de l'espace en bas de la page
+    backgroundColor:'black',
   },
-  welcomeText: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  image: {
-    width: 200,
-    height: 200,
-    marginBottom: 5,
-  },
-  subText: {
-    fontSize: 18,
-    textAlign: 'center',
-    color: 'red',
-  },
+ 
+ 
+ 
   button: {
-    backgroundColor: 'green',
-    padding: 10,
-    borderRadius: 5,
-    marginTop: 80,
+    padding: 5,
+    marginTop: 10,
+    width: '30%',
+    alignSelf: 'flex-end', // Déplacer le bouton vers la droite
   },
   buttonText: {
     color: 'white',
     textAlign: 'center',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+ 
+  backgroundVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    
+    width: '120%', 
+    height: '120%', 
+  },
+
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
   },
 });
 

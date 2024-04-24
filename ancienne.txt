@@ -1,0 +1,86 @@
+import React from 'react';
+import { Text, View, TouchableOpacity, StyleSheet, ImageBackground, Image } from 'react-native';
+import { Video } from 'expo-av';
+
+// Import de la vidéo
+import VideoSource from 'C:/Users/HP/Desktop/cuppfa/frontend/frontend/assets/videos/Morocco.mp4';
+
+function WelcomeScreen({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <Video
+        source={VideoSource} 
+        style={styles.backgroundVideo}
+        resizeMode="cover"
+        shouldPlay
+      />
+      <Text style={styles.welcomeText}>Welcome to Cupculture</Text>
+      <Image
+        style={styles.logo}
+        source={require('C:/Users/HP/Desktop/cuppfa/frontend/frontend/logo1-removebg-preview.png')} 
+      />
+      <Text style={styles.subText}>Explore Sports and culture for your African Cup adventure</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('InterfaceConnexion')} style={styles.button}>
+        <Text style={styles.buttonText}>Get Started</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent', 
+    padding: 20,
+  },
+  welcomeText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    textAlign: 'center', 
+  },
+  logo: {
+    width: 200,
+    height: 200,
+    marginBottom: 20, 
+  },
+  subText: {
+    fontSize: 18,
+    textAlign: 'center',
+    color: 'red',
+    marginBottom: 20, 
+  },
+  button: {
+    backgroundColor: 'green',
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 20, 
+    width: '60%', 
+  },
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+ 
+  backgroundVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    width: '120%', 
+    height: '120%', 
+  },
+
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
+});
+
+export default WelcomeScreen;
