@@ -2,7 +2,6 @@ import React from 'react';
 import { Text, View, TouchableOpacity, StyleSheet, ImageBackground, Image } from 'react-native';
 import { Video } from 'expo-av';
 
-// Import de la vidéo
 import VideoSource from 'C:/Users/HP/Desktop/cuppfa/frontend/frontend/assets/videos/Morocco.mp4';
 
 function WelcomeScreen({ navigation }) {
@@ -13,6 +12,7 @@ function WelcomeScreen({ navigation }) {
         style={styles.backgroundVideo}
         resizeMode="cover"
         shouldPlay
+        isMuted
       />
      
      
@@ -27,10 +27,10 @@ function WelcomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between', // Aligne les éléments verticalement en les espaçant
-    alignItems: 'flex-end', // Aligne les éléments à droite
+    justifyContent: 'space-between', 
+    alignItems: 'flex-end', 
     paddingHorizontal: 20,
-    paddingBottom: 20, // Ajoute de l'espace en bas de la page
+    paddingBottom: 20,
     backgroundColor:'black',
   },
  
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     padding: 5,
     marginTop: 10,
     width: '30%',
-    alignSelf: 'flex-end', // Déplacer le bouton vers la droite
+    alignSelf: 'flex-end',
   },
   buttonText: {
     color: 'white',

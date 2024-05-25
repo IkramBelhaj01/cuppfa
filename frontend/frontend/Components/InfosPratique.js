@@ -9,12 +9,15 @@ const InfosPratique = ({ navigation }) => {
     setSelectedSection(section);
     setModalVisible(true);
   };
-
+  
   return (
+    
     <View style={styles.container}>
-      
+     
       <TouchableOpacity style={styles.section} onPress={() => handleSectionPress('Climats et saisons')}>
+         
         <Text style={styles.sectionText}>Climats et saisons</Text>
+        
       </TouchableOpacity>
       <TouchableOpacity style={styles.section} onPress={() => handleSectionPress('Formalités')}>
         <Text style={styles.sectionText}>Formalités</Text>
@@ -24,8 +27,9 @@ const InfosPratique = ({ navigation }) => {
       </TouchableOpacity>
       <TouchableOpacity style={styles.section} onPress={() => handleSectionPress('Langue et vocabulaire essentiel')}>
         <Text style={styles.sectionText}>Langue et vocabulaire essentiel</Text>
+        
       </TouchableOpacity>
-
+     
      
 
      
@@ -389,17 +393,27 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#f4f4f8', // Changé pour un gris très clair
     padding: 20,
   },
   section: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 20,
+    backgroundColor:'#800020', // Couleur bleu vif
+    paddingVertical: 12, // Ajustement de la hauteur du bouton
+    paddingHorizontal: 20,
+    borderRadius: 25, // Bords arrondis
+    shadowColor: '#000', // Ajout d'ombre
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   sectionText: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: '#ffffff', // Texte en blanc pour contraste
   },
   modalContainer: {
     flex: 1,

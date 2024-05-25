@@ -1,7 +1,51 @@
-import React from 'react';
-import { View, TouchableOpacity, StyleSheet, TextInput, Text, ImageBackground, KeyboardAvoidingView } from 'react-native';
+import React, { useState } from 'react';
+import { View, TouchableOpacity, StyleSheet, TextInput, Text, ImageBackground, KeyboardAvoidingView, Alert } from 'react-native';
+import axios from 'axios'; // Make sure to install axios if not already installed
 
 function Sign_in({ navigation }) {
+  // Adding state to manage email and password inputs
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const handleRegistration = async () => {
+    if (!email || !password) {
+      Alert.alert("Validation Error", "Both email and password are required.");
+      return;
+    }
+  
+    try {
+      const response = await axios.post('http://192.168.100.115:5000/api/user/signup', {
+        email,
+        password
+      });
+  
+      if (response.data.success) {
+        // Alert with an option to go to the login page
+        Alert.alert(
+          "Registration Successful",
+          "Your account has been created successfully! Please log in to continue.",
+          [
+            { text: "OK", onPress: () => navigation.navigate('InterfaceConnexion') }
+          ]
+        );
+      } else {
+        if (response.status === 409) {
+          Alert.alert("Registration Failed", "This email is already in use.");
+        } else {
+          Alert.alert("Registration Failed", response.data.message || "Unknown error occurred");
+        }
+      }
+    } catch (error) {
+      console.error('Error connecting to the server:', error);
+      if (error.response && error.response.status === 409) {
+        Alert.alert("Registration Error", "This email is already in use.");
+      } else {
+        Alert.alert("Network Error", "Could not connect to the server. Try again later.");
+      }
+    }
+  };
+  
+  
+
   return (
     <ImageBackground
       source={require('C:/Users/HP/Desktop/cuppfa/frontend/frontend/09-8.jpg')} 
@@ -11,25 +55,16 @@ function Sign_in({ navigation }) {
       <KeyboardAvoidingView style={styles.container} behavior="padding" enabled keyboardVerticalOffset={100}>
         <View style={styles.innerContainer}>
           <Text style={styles.subText}>Sign Up</Text>
-          <View style={styles.inputContainer}>
-            <Text style={styles.inputLabel}>First Name</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Enter your first name"
-            />
-          </View>
-          <View style={styles.inputContainer}>
-            <Text style={styles.inputLabel}>Last Name</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Enter your last name"
-            />
-          </View>
+          
           <View style={styles.inputContainer}>
             <Text style={styles.inputLabel}>Email</Text>
             <TextInput
               style={styles.input}
               placeholder="Enter your email"
+              value={email}
+              onChangeText={setEmail}
+              autoCapitalize="none"
+              keyboardType="email-address"
             />
           </View>
           <View style={styles.inputContainer}>
@@ -37,16 +72,17 @@ function Sign_in({ navigation }) {
             <TextInput
               style={styles.input}
               placeholder="Enter your password"
+              secureTextEntry={true}
+              value={password}
+              onChangeText={setPassword}
             />
           </View>
           <View style={styles.buttonContainer}>
+            <TouchableOpacity onPress={handleRegistration} style={styles.button}>
+              <Text style={styles.buttonText}>Sign in</Text>
+            </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('InterfaceConnexion')} style={styles.loginButton}>
               <Text style={styles.loginButtonText}>Already a member? Log in</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={() => navigation.navigate('Menu')} style={styles.button}>
-              <Text style={styles.buttonText}>Sign in</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -87,7 +123,7 @@ const styles = StyleSheet.create({
   inputLabel: {
     color: 'white',
     width: 100,
-    fontWeight: 'bold' // Largeur fixe pour les labels
+    fontWeight: 'bold'
   },
   input: {
     flex: 1,

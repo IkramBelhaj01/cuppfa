@@ -1,50 +1,30 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser'); 
-
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const {bddconnect}= require('./bdd/connectBDD');
 const app = express();
 const PORT = process.env.PORT || 5000;
+const authrouter=require('./routes/authRoutes')
+// Activer CORS pour toutes les origines
+app.use(cors());
 
-
+// Middleware pour parser les requêtes JSON
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/caf', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+
+//Connexion a la bdd
+bddconnect();
+
+app.use('/api/user', authrouter)
 
 
-const UserSchema = new mongoose.Schema({
-  username: String,
-  password: String
+app.get('/',(req,res) => {
+  res.send('connecte')
+})
+
+// Écouter sur toutes les interfaces
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on ${PORT}`);
 });
 
-const User = mongoose.model('User', UserSchema);
-
-
-app.get('/api/checkUser', async (req, res) => {
-  const { username, password } = req.query;
-  try {
-    const user = await User.findOne({ username, password });
-    if (user) {
-      res.json({ success: true, message: 'User found' });
-    } else {
-      res.json({ success: false, message: 'User not found' });
-    }
-  } catch (error) {
-    res.status(500).json({ success: false, message: 'Internal server error' });
-  }
-});
-
-
-app.post('/api/addUser', async (req, res) => {
-  const { username, password } = req.body;
-  try {
-    const newUser = new User({ username, password });
-    await newUser.save();
-    res.json({ success: true, message: 'User added successfully' });
-  } catch (error) {
-    res.status(500).json({ success: false, message: 'Internal server error' });
-  }
-});
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
