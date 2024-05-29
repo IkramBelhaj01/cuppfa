@@ -6,6 +6,17 @@ import InterfaceConnexion from './Components/ConnexionPage/InterfaceConnexion';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AccueilPage from './Components/AcceuilPage/AcceuilPage'; // Importez la page d'accueil
 
+//transport
+import PageTransport from './Components/PageTransport/PageTransport';
+import FesTransport from './Components/PageTransport/FesTransport';
+import AgadirTransport from './Components/PageTransport/AgadirTransport';
+import CasablancaTransport from './Components/PageTransport/CasablancaTransport';
+import MarrakechTransport from './Components/PageTransport/MarrakechTransport';
+import RabatTransport from './Components/PageTransport/RabatTransport';
+import TangerTransport from './Components/PageTransport/TangerTransport';
+
+
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -33,6 +44,91 @@ export default function App() {
         }}
   
         />
+        
+        <Stack.Screen
+          name="PageTransport"
+          component={PageTransport}
+          options={{
+            title: 'Page Transport',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'black',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="FesTransport"
+          component={FesTransport}
+          options={{
+            title: 'Fès',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'black',
+            },
+          }}
+          
+        />
+        <Stack.Screen
+          name="AgadirTransport"
+          component={AgadirTransport}
+          options={{
+            title: 'Agadir',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'black',
+            },
+          }}
+          
+        />
+        <Stack.Screen
+          name="CasablancaTransport"
+          component={CasablancaTransport}
+          options={{
+            title: 'Casablanca',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'black',
+            },
+          }}
+          
+        />
+        <Stack.Screen
+          name="MarrakechTransport"
+          component={MarrakechTransport}
+          options={{
+            title: 'Marrakech',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'black',
+            },
+          }}
+          
+        />
+        <Stack.Screen
+          name="RabatTransport"
+          component={RabatTransport}
+          options={{
+            title: 'Rabat',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'black',
+            },
+          }}
+          
+        />
+        <Stack.Screen
+          name="TangerTransport"
+          component={TangerTransport}
+          options={{
+            title: 'Tanger',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'black',
+            },
+          }}
+          
+        />
+      
       </Stack.Navigator>
     </NavigationContainer>
   );

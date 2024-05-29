@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-const backgroundImage = require('C:/Users/admin/Desktop/cuppfa/frontend/frontend/assets/back1.jpg'); // Chemin vers votre image d'arrière-plan
+const backgroundImage = require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/back1.jpg'); // Chemin vers votre image d'arrière-plan
 
 const AccueilPage = ({ navigation }) => {
   return (
@@ -18,11 +18,11 @@ const AccueilPage = ({ navigation }) => {
             <Ionicons name="calendar" size={30} color="black" />
             <Text style={styles.menuItemText}>Calendrier</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Recommandations')}>
+          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('PageRecommandations')}>
             <Ionicons name="restaurant" size={30} color="black"/>
             <Text style={styles.menuItemText}>Recommandations</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Transport')}>
+          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('PageTransport')}>
             <Ionicons name="bus" size={30} color="black" />
             <Text style={styles.menuItemText}>Transport</Text>
           </TouchableOpacity>

@@ -7,7 +7,7 @@ function WelcomeScreen({ navigation }) {
       <Text style={styles.welcomeText}>Welcome to Cupculture</Text>
       <Image
         style={styles.image}
-        source={require('C:/Users/admin/Desktop/cuppfa/frontend/frontend/assets/logo1-removebg-preview.png')}  
+        source={require('D:/3eme annee esisa/cuppfa/frontend/frontend/assets/logo1-removebg-preview.png')}  
       />
       <Text style={styles.subText}>Explore Sports and culture for your African Cup adventure</Text>
       
