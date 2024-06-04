@@ -1,28 +1,48 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ImageBackground,Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-const backgroundImage = require('C:/Users/admin/Desktop/cuppfa/frontend/frontend/assets/back1.jpg'); // Chemin vers votre image d'arrière-plan
+import axios from 'axios'; 
+const backgroundImage = require('C:/Users/HP/Desktop/cuppfa/frontend/frontend/Components/AcceuilPage/photos/stock.jpg'); // Chemin vers votre image d'arrière-plan
 
 const AccueilPage = ({ navigation }) => {
+  const handleLogout = async () => {
+    console.log("Tentative de déconnexion"); // Ceci est pour le débogage
+  
+    try {
+        const response = await axios.post('http://192.168.100.115:5000/api/user/logout');
+        console.log(response.data); // Affiche la réponse du serveur
+        Alert.alert("Déconnexion", "Vous êtes déconnecté.");
+        navigation.navigate('InterfaceConnexion');
+    } catch (error) {
+        console.error('Erreur lors de la déconnexion :', error);
+        Alert.alert("Erreur", "Échec de la déconnexion");
+    }
+  };
+  
+
   return (
     
     <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-    
+     {/* Bouton de déconnexion placé en haut à droite */}
+     <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+   
+    <Text style={styles.logoutText}>Déconnexion</Text>
+</TouchableOpacity>
       <View style={styles.container}>
         <Text style={styles.welcomeText}>Bienvenue sur CupCulture</Text>
         
         {/* Boutons avec icônes */}
         <View style={styles.menuContainer}>
-          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Calendrier')}>
+          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('CalendarPage')}>
             <Ionicons name="calendar" size={30} color="black" />
             <Text style={styles.menuItemText}>Calendrier</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Recommandations')}>
+          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('PageRecommandations')}>
             <Ionicons name="restaurant" size={30} color="black"/>
             <Text style={styles.menuItemText}>Recommandations</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Transport')}>
+          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('PageTransport')}>
             <Ionicons name="bus" size={30} color="black" />
             <Text style={styles.menuItemText}>Transport</Text>
           </TouchableOpacity>
@@ -34,6 +54,10 @@ const AccueilPage = ({ navigation }) => {
             <Ionicons name="star" size={24} color="black" />
             <Text style={styles.menuItemText}>Avis</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('InfosPratique')}>
+            <Ionicons name="star" size={24} color="black" />
+            <Text style={styles.menuItemText}>InfosPratique</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ImageBackground>
@@ -43,10 +67,12 @@ const AccueilPage = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+   
     justifyContent: 'center',
     alignItems: 'center',
   },
   welcomeText: {
+   
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20, // Espacement après le texte de bienvenue
@@ -55,6 +81,7 @@ const styles = StyleSheet.create({
     marginBottom:120,
   },
   menuContainer: {
+    top:-60,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
@@ -71,6 +98,7 @@ const styles = StyleSheet.create({
     
     
   },
+  
   menuItemText: {
     marginTop: 10, // Espacement entre l'icône et le texte
     fontSize: 16,

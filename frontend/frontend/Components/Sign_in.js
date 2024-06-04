@@ -1,55 +1,50 @@
 import React, { useState } from 'react';
 import { View, TouchableOpacity, StyleSheet, TextInput, Text, ImageBackground, KeyboardAvoidingView, Alert } from 'react-native';
-import axios from 'axios';
-import { useFocusEffect } from '@react-navigation/native'; // Ensure to import useFocusEffect
+import axios from 'axios'; // Make sure to install axios if not already installed
 
-function InterfaceConnexion({ navigation }) {
+function Sign_in({ navigation }) {
+  // Adding state to manage email and password inputs
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  useFocusEffect(
-    React.useCallback(() => {
-      // Clear input fields when the screen is focused
-      setEmail('');
-      setPassword('');
-      return () => {
-        // Optionally do something when the screen loses focus
-      };
-    }, [])
-  );
-
-const handleLogin = async () => {
+  const handleRegistration = async () => {
     if (!email || !password) {
-      Alert.alert("Validation Error", "Email and password are required.");
+      Alert.alert("Validation Error", "Both email and password are required.");
       return;
     }
-
+  
     try {
-      const response = await axios.post('http://192.168.100.115:5000/api/user/signin', {
-        email, password
+      const response = await axios.post('http://192.168.100.115:5000/api/user/signup', {
+        email,
+        password
       });
-
+  
       if (response.data.success) {
-        navigation.navigate('AccueilPage'); // Assuming 'AccueilPage' is a valid route
+        // Alert with an option to go to the login page
+        Alert.alert(
+          "Registration Successful",
+          "Your account has been created successfully! Please log in to continue.",
+          [
+            { text: "OK", onPress: () => navigation.navigate('InterfaceConnexion') }
+          ]
+        );
       } else {
-        Alert.alert("Login Failed", response.data.message);
+        if (response.status === 409) {
+          Alert.alert("Registration Failed", "This email is already in use.");
+        } else {
+          Alert.alert("Registration Failed", response.data.message || "Unknown error occurred");
+        }
       }
     } catch (error) {
       console.error('Error connecting to the server:', error);
-      if (error.response) {
-        console.log('Response Data:', error.response.data);
-        Alert.alert("Login Error", error.response.data.message);
-      } else if (error.request) {
-        console.log('Request Error:', error.request);
-        Alert.alert("Network Error", "No response from server, check server connectivity");
+      if (error.response && error.response.status === 409) {
+        Alert.alert("Registration Error", "This email is already in use.");
       } else {
-        console.log('Error Message:', error.message);
-        Alert.alert("Login Error", "Unexpected error occurred");
+        Alert.alert("Network Error", "Could not connect to the server. Try again later.");
       }
     }
-    
-    
   };
+  
+  
 
   return (
     <ImageBackground
@@ -57,9 +52,10 @@ const handleLogin = async () => {
       style={styles.background}
       blurRadius={5}
     >
-      <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
+      <KeyboardAvoidingView style={styles.container} behavior="padding" enabled keyboardVerticalOffset={100}>
         <View style={styles.innerContainer}>
-          <Text style={styles.subText}>Login</Text>
+          <Text style={styles.subText}>Sign Up</Text>
+          
           <View style={styles.inputContainer}>
             <Text style={styles.inputLabel}>Email</Text>
             <TextInput
@@ -67,8 +63,8 @@ const handleLogin = async () => {
               placeholder="Enter your email"
               value={email}
               onChangeText={setEmail}
-              keyboardType="email-address" // Facilitates email input
-              autoCapitalize="none" // Ensures email is entered in lower case
+              autoCapitalize="none"
+              keyboardType="email-address"
             />
           </View>
           <View style={styles.inputContainer}>
@@ -76,17 +72,17 @@ const handleLogin = async () => {
             <TextInput
               style={styles.input}
               placeholder="Enter your password"
-              secureTextEntry={true} // Hides password input
+              secureTextEntry={true}
               value={password}
               onChangeText={setPassword}
             />
           </View>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={handleLogin} style={styles.button}>
-              <Text style={styles.buttonText}>Login</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Sign_in')} style={styles.button}>
+            <TouchableOpacity onPress={handleRegistration} style={styles.button}>
               <Text style={styles.buttonText}>Sign in</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('InterfaceConnexion')} style={styles.loginButton}>
+              <Text style={styles.loginButtonText}>Already a member? Log in</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -114,32 +110,42 @@ const styles = StyleSheet.create({
   subText: {
     fontSize: 18,
     textAlign: 'center',
-    color: 'black',
+    color: 'white',
     marginBottom: 20,
     fontWeight: 'bold'
   },
   inputContainer: {
     width: '100%',
     marginBottom: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   inputLabel: {
-    color: 'black',
-    marginBottom: 8,
+    color: 'white',
+    width: 100,
     fontWeight: 'bold'
   },
   input: {
-    width: '100%',
-    maxWidth: 300, 
+    flex: 1,
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
     paddingHorizontal: 10,
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
+  loginButton: {
+    marginBottom: 10,
+  },
+  loginButtonText: {
+    color: 'white',
+    fontSize: 14,
+
+  },
   buttonContainer: {
     flexDirection: 'row',
   },
   button: {
+    backgroundColor: 'black',
     backgroundColor: 'black',
     padding: 10,
     borderRadius: 5,
@@ -150,9 +156,9 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
   },
 });
 
-export default InterfaceConnexion;
+export default Sign_in;
